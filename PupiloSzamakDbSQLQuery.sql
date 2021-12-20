@@ -21,4 +21,5 @@ CREATE TABLE Animals
 	AnimalSex  Char(6) check (AnimalSex in ('Female','Male'))NOT NULL,
 	AnimalActivity TinyInt (10) NOT NULL,
 	AnimalFertility Bit (1) NOT NULL,
-)	
+	Foreign Key(UserId) REFERENCES Users ON DELETE CASCADE ON UPDATE CASCADE 
+);
