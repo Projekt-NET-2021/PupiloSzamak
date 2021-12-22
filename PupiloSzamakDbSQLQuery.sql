@@ -19,7 +19,9 @@ CREATE TABLE Animals
 	AnimalLarge Char(9) CHECK (AnimalLarge in('Huge','Large','Medium','Small','Minature')) NOT NULL,
 	AnimalWeight TinyInt NOT NULL,
 	AnimalSex  Char(6) check (AnimalSex in ('Female','Male'))NOT NULL,
-	AnimalActivity TinyInt (10) NOT NULL,
-	AnimalFertility Bit (1) NOT NULL,
-	Foreign Key(UserId) REFERENCES Users ON DELETE CASCADE ON UPDATE CASCADE 
+	AnimalActivity TinyInt  NOT NULL,
+	AnimalFertility Bit  NOT NULL,
+	AnimalOwnerId int  Foreign Key REFERENCES Users(UserId) ON DELETE CASCADE ON UPDATE CASCADE 
+
+
 );
